@@ -58,7 +58,7 @@ cluster step commits only the files it names, and asks before it pushes.
 Paste on mscluster88, in the VS Code session opened on the node.
 
 ```
-/drip-repo ~/PhD/reduce-reuse-recycle
+/drip-repo ~/PhD/replications/reduce-reuse-recycle
 
 Resume the walk that gets the authors' code for Du et al. 2023, "Reduce, Reuse, Recycle" (arXiv 2302.11552,
 github.com/yilundu/reduce_reuse_recycle), running on the cluster so I can follow along in the code: the 2D
@@ -104,7 +104,7 @@ and continued on mscluster112 on 2026-10-13. Everything below was learned there,
     export UV_CACHE_DIR=$R/uv-cache
     uv venv --python 3.12 $R/venvs/rrr-jax
     uv pip install --python $R/venvs/rrr-jax/bin/python "jax[cuda12]==0.11.2" dm-haiku optax distrax chex matplotlib ipykernel
-    ln -s $R/venvs/rrr-jax ~/PhD/reduce-reuse-recycle/.venv
+    ln -s $R/venvs/rrr-jax ~/PhD/replications/reduce-reuse-recycle/.venv
 
 Success is `jax.devices()` printing a CUDA device, not a CPU one. Then tell me how to pick `.venv` as the
 kernel in VS Code, and start the notebook rounds.
@@ -173,7 +173,7 @@ do not infer, for anything about the cluster that `environment/` does not cover.
   command, giving the cell's first line, what it showed, the picture's path, and the time it took.
 - The clone's `walk` branch is pushed nowhere, so write its changes to
   `3-understanding-compositionality/artifacts/drips/reduce-reuse-recycle-mscluster112/clone-changes.patch` with
-  `git -C ~/PhD/reduce-reuse-recycle diff 81177d9 > <that path>`. The notebook fixes and the U-Net patch
+  `git -C ~/PhD/replications/reduce-reuse-recycle diff 81177d9 > <that path>`. The notebook fixes and the U-Net patch
   then survive the clone being deleted.
 - Commit only the walk file, the patch, and the environment and runbook files this walk touched. Show me the
   branch and `git status` first, because this checkout has uncommitted files from other work, and push only
@@ -207,8 +207,8 @@ original first. It can run alongside step 4: the read explains what a cell means
 rebuilds it.
 
 ```
-/unbuild --walk ~/PhD/reduce-reuse-recycle/notebooks/simple_distributions.ipynb
-Run on this node. The original runs here: its walk file is /home-mscluster/mmolefe/Playground/PhD/poe_repair_min/3-understanding-compositionality/artifacts/drips/reduce-reuse-recycle-mscluster112/REPO_WALK.md and its environment is ~/PhD/reduce-reuse-recycle/.venv. Put the rebuild folder at ~/playground/deep-learning/reduce-reuse-recycle-rebuild/ on this machine, and the walk folder in journey 02's 3-understanding-compositionality/artifacts/drips/the-toy/simple-distributions-rebuild/ (/home-mscluster/mmolefe/goal-setting/learning/deep-learning/diffusion-models/02-sampler-correctors-for-composition/).
+/unbuild --walk ~/PhD/replications/reduce-reuse-recycle/notebooks/simple_distributions.ipynb
+Run on this node. The original runs here: its walk file is /home-mscluster/mmolefe/Playground/PhD/poe_repair_min/3-understanding-compositionality/artifacts/drips/reduce-reuse-recycle-mscluster112/REPO_WALK.md and its environment is ~/PhD/replications/reduce-reuse-recycle/.venv. Put the rebuild folder at ~/playground/deep-learning/reduce-reuse-recycle-rebuild/ on this machine, and the walk folder in journey 02's 3-understanding-compositionality/artifacts/drips/the-toy/simple-distributions-rebuild/ (/home-mscluster/mmolefe/goal-setting/learning/deep-learning/diffusion-models/02-sampler-correctors-for-composition/).
 Name the audit rows each brick inherits, from step 1 of /home-mscluster/mmolefe/Playground/PhD/poe_repair_min/3-understanding-compositionality/artifacts/drips/reduce-reuse-recycle/PROMPTS.md.
 I go slowly and want to see every small change: a 1D Gaussian, then a 2D one, then a set of points, before any network.
 ```

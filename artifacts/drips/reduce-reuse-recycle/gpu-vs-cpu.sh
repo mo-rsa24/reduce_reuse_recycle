@@ -2,7 +2,7 @@
 # Train the bar expert (notebook cell 33 at 81177d9) on the GPU kernel, then on the CPU kernel,
 # one after the other so neither shares the machine with the other.
 W=/home/molef/PhD/poe_repair_min/3-understanding-compositionality/artifacts/drips/reduce-reuse-recycle
-V=/home/molef/PhD/reduce-reuse-recycle/.venv-2d/bin/python
+V=/home/molef/PhD/replications/reduce-reuse-recycle/.venv-2d/bin/python
 cd $W
 COMPAT='import chex
 chex.assert_type = lambda *args, **kwargs: None

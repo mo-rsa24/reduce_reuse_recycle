@@ -19,7 +19,7 @@ HERE = pathlib.Path(__file__).parent
 import os
 # KERNEL=gpu addresses a second kernel (kernel-gpu.json) so a CPU and a GPU run can sit side by side.
 CONN = HERE / ("kernel-gpu.json" if os.environ.get("KERNEL") == "gpu" else "kernel.json")
-CLONE = "/home/molef/PhD/reduce-reuse-recycle"
+CLONE = "/home/molef/PhD/replications/reduce-reuse-recycle"
 # Cell numbers are the original notebook's at 81177d9, read from git, so an edited working copy
 # (the reader runs their own cells there) never shifts them.
 NB_JSON = json.loads(subprocess.run(
@@ -93,7 +93,7 @@ def main():
     cmd = sys.argv[1]
     if cmd == "start":
         # The kernel itself is launched beforehand, detached, with
-        # nohup /home/molef/PhD/reduce-reuse-recycle/.venv-2d/bin/python -m ipykernel_launcher -f kernel.json
+        # nohup /home/molef/PhD/replications/reduce-reuse-recycle/.venv-2d/bin/python -m ipykernel_launcher -f kernel.json
         c = client()
         execute(c, SETUP, "setup")
         print("kernel ready:", CONN)

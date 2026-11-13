@@ -7,7 +7,7 @@ The working file for the `/drip-repo` walk that gets the authors' code for Du et
 
 | Field | Value |
 |---|---|
-| Clone | `/home/molef/PhD/reduce-reuse-recycle`, local branch `walk` at `81177d9` |
+| Clone | `/home/molef/PhD/replications/reduce-reuse-recycle`, local branch `walk` at `81177d9` |
 | Remote | `https://github.com/yilundu/reduce_reuse_recycle` |
 | Start commit | `81177d9` (the same commit the R3 read's `reference/` copy is at) |
 | Fact folders | `/home/molef/PhD/poe_repair_min/environment/` and `/home/molef/PhD/poe_repair_min/runbook/` |
@@ -19,7 +19,7 @@ The working file for the `/drip-repo` walk that gets the authors' code for Du et
 
 | # | Runnable thing | Command | Needs first | Success looks like | Mark |
 |---|---|---|---|---|---|
-| 1 | clone | `git clone ... ~/PhD/reduce-reuse-recycle && git checkout 81177d9` | network | `git log -1` shows `81177d9` | done 2026-10-13: `81177d9 Update README.md`, 40 files |
+| 1 | clone | `git clone ... ~/PhD/replications/reduce-reuse-recycle && git checkout 81177d9` | network | `git log -1` shows `81177d9` | done 2026-10-13: `81177d9 Update README.md`, 40 files |
 | 2 | 2D environment (JAX, CPU) | `uv venv .venv-2d --python 3.12` + jax, dm-haiku, optax, distrax, chex, matplotlib, jupyter | 1 | `python -c "import jax, haiku, distrax; print(jax.devices())"` prints a CPU device | done 2026-10-13: jax 0.11.2 `[CpuDevice(id=0)]`, haiku, optax, distrax, chex import |
 | 3a | notebook: model and composition definitions (cells 2-11) | kernel, cells run in order | 2 | no error; the classes defined | done 2026-10-13: cells 1-10 ran (cell 0 `!pip` skipped, cell 3 without its unused pandas and tensorflow imports); `EBMDiffusionModel`, `ProductEBMDiffusionModel`, `MixtureEBMDiffusionModel`, `NegationEBMDiffusionModel`, `ResnetDiffusionModel` defined, beta runs 0.000631 to 0.999 |
 | 3b | notebook: trainer, datasets and samplers (cells 12-30) | same kernel | 3a | no error | done 2026-10-13: cell 12 done 2026-10-13, `PortableDiffusionModel` defined (loss, sample, p_sample, logpx, energy_scale, p_gradient); cells 14-20 done 2026-10-13, seven datasets drawn in `figures/the-seven-toy-datasets.png` |
